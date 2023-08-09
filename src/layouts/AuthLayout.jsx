@@ -1,11 +1,10 @@
 import '../App.css';
-
+import Navbar from "../components/Navbar";
 const AuthLayout = ({children}) => {
     return (
-        <div className="App">
-            <h1 className="text-3xl font-bold underline">
-                {{children}}
-            </h1>
+        <div className="App container mx-auto bg-gray-50 max-h-full">
+            <Navbar />
+            <div>{children}</div>
         </div>
     );
 };

@@ -1,3 +1,19 @@
 body{
     background-color: rgb(249 250 251) !important;
 }
+.menu-enter {
+    opacity: 0;
+    transform: scale(0.95);
+}
+.menu-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.menu-exit {
+    opacity: 1;
+}
+.menu-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}

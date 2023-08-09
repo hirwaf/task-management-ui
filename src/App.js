@@ -5,6 +5,7 @@ import Routers from "./routers";
 import isLoggedIn from "./helpers/isLoggedIn";
 import AuthLayout from "./layouts/AuthLayout";
 import RegisterPage from "./pages/registerPage";
+import BrowseTaskPage from "./pages/tasks/browsePage";
 
 const ProtectedRoute = () => {
     const isAuthenticated = isLoggedIn();
@@ -29,7 +30,7 @@ const App = () => {
                 <Route index element={(<></>)} />
             </Route>
             <Route path={Routers.TasksListPage.path} element={<ProtectedRoute />} >
-                <Route index element={(<></>)} />
+                <Route index element={<BrowseTaskPage />} />
             </Route>
             <Route path={Routers.TaskEditPage.path} element={<ProtectedRoute />} >
                 <Route index element={(<></>)} />
