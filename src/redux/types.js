@@ -1,0 +1,10 @@
+export const LOADING = 'LOADING';
+export const USER_REGISTERED = 'USER_REGISTERED';
+export const USER_LOGGED_IN = 'USER_LOGGED_IN';
+export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
+export const USER_ERROR = 'USER_ERROR';
+export const TASK_CREATED = 'TASK_CREATED';
+export const TASK_DELETED = 'TASK_DELETED';
+export const TASK_UPDATED = 'TASK_UPDATED';
+export const TASK_VIEWED = 'TASK_VIEWED';
+export const TASK_ERROR = 'TASK_ERROR';

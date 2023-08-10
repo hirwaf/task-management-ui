@@ -2,13 +2,14 @@ import './App.css';
 import {Navigate, Outlet, Route, Routes} from "react-router-dom";
 import LoginPage from "./pages/loginPage";
 import Routers from "./routers";
-import isLoggedIn from "./helpers/isLoggedIn";
 import AuthLayout from "./layouts/AuthLayout";
 import RegisterPage from "./pages/registerPage";
 import BrowseTaskPage from "./pages/tasks/browsePage";
+import {IsLoggedIn} from "./helpers/users";
+import CreateEditPage from "./pages/tasks/createEditPage";
 
 const ProtectedRoute = () => {
-    const isAuthenticated = isLoggedIn();
+    const isAuthenticated = IsLoggedIn();
 
     if (!isAuthenticated) {
         return <Navigate to={Routers.LoginPage.path} replace />;
@@ -33,10 +34,10 @@ const App = () => {
                 <Route index element={<BrowseTaskPage />} />
             </Route>
             <Route path={Routers.TaskEditPage.path} element={<ProtectedRoute />} >
-                <Route index element={(<></>)} />
+                <Route index element={< CreateEditPage />} />
             </Route>
             <Route path={Routers.TaskCreatePage.path} element={<ProtectedRoute />} >
-                <Route index element={(<></>)} />
+                <Route index element={< CreateEditPage />} />
             </Route>
         </Routes>
     );
